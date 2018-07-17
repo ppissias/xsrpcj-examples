@@ -1,0 +1,18 @@
+{
+	"servers":[
+	 	{
+			"name": "Persons",
+			"port": "22100",
+			"javaPackage":"org.xsrpcj.example.simple",
+			"services":[
+				{"serviceName":"search", "requestType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonRequest", "responseType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" },
+				{"serviceName":"notify", "requestType":"org.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest", "responseType":"org.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse" , "callbackType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" }
+			]
+		}		
+	], 
+	"infrastructure" : {
+		"javaPackage":"org.xsrpcj.example.simple.comms",
+		"logging":"System"
+	}	 
+}
+	

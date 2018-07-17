@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package TestMessages;
+
+option java_package = "org.xsrpcj.example.grpcperformance";
+option java_outer_classname = "TestMessages";
+option java_generic_services = true;
+
+//sample message request
+message MessageRequest {
+  string requestData = 1;
+  int32 numberOfCallbacks = 2;
+}
+
+//sample message response
+message MessageResponse {
+ enum responseEnum {
+    ACCEPTED = 0;
+    REJECTED = 1;
+  }
+  
+  responseEnum response = 1; 
+}
+
+//sample message callback
+message CallbackResponse {
+	repeated string callbackText = 1;
+}
+
+//service definition
+service Example {
+	rpc requestResponse(MessageRequest) returns (MessageResponse) {}
+	rpc requestResponseCallback(MessageRequest) returns (stream CallbackResponse) {}
+}

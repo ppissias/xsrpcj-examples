@@ -1,0 +1,19 @@
+{
+	"servers":[
+	 	{
+			"name": "Example",
+			"port": "22100",
+			"javaPackage":"org.xsrpcj.example.performance",
+			"services":[
+				{"serviceName":"oneWayRequest", "requestType":"org.xsrpcj.example.performance.TestMessages.MessageRequest"},
+				{"serviceName":"requestResponse", "requestType":"org.xsrpcj.example.performance.TestMessages.MessageRequest", "responseType":"org.xsrpcj.example.performance.TestMessages.MessageResponse" },
+				{"serviceName":"requestResponseCallback", "requestType":"org.xsrpcj.example.performance.TestMessages.MessageRequest", "responseType":"org.xsrpcj.example.performance.TestMessages.MessageResponse" , "callbackType":"org.xsrpcj.example.performance.TestMessages.CallbackResponse" }
+			]
+		}		
+	], 
+	"infrastructure" : {
+		"javaPackage":"org.xsrpcj.example.performance.comms",
+		"logging":"System"
+	}	 
+}
+	

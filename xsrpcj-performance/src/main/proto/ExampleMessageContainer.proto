@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package Example;
+
+option java_package = "org.xsrpcj.example.performance.types";
+option java_outer_classname = "Example";
+
+message MessageContainer {
+
+ enum MessageType {
+	oneWayRequestRequest = 0;
+	requestResponseRequest = 1;
+	requestResponseResponse = 2;
+	requestResponseCallbackRequest = 3;
+	requestResponseCallbackResponse = 4;
+	requestResponseCallbackCallback = 5;
+  }
+  
+  MessageType messageType = 1;
+  
+  bytes messageData = 2;
+}
+
+

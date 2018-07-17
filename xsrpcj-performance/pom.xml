@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+    	<groupId>org.xsrpcj.example</groupId>
+    	<artifactId>examples</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
+ 	</parent>
+ 	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>performance</artifactId>
+	<name>xsrpcj performance example</name>
+	<description>xsrpcj performance example</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.xsrpc.gen</groupId>
+			<artifactId>xsrpcgen</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		
+			<plugins>
+
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.6.0</version>
+					<executions>
+
+
+						<execution>
+							<id>exec-protoc</id>
+							
+							<goals>
+								<goal>exec</goal>
+							</goals>
+														
+							<phase>generate-sources</phase>
+							
+							<configuration>
+								<executable failonerror="true">${protoc.compiler.path}</executable>
+								<arguments>
+									<argument>-I=${project.basedir}/proto</argument>
+									<argument>--java_out=${project.build.sourceDirectory}</argument>
+									<argument>${project.basedir}/proto/TestMessages.proto</argument>
+								</arguments>
+							</configuration>
+
+						</execution>
+
+
+						<execution>
+							<id>generate RPC stubs</id>
+							<phase>generate-sources</phase>
+							<configuration>
+								<mainClass>org.xsrpcj.gen.XsRPCJGenerator</mainClass>
+								<arguments>
+									<argument>-server</argument>
+									<argument>-client</argument>
+									<argument>-infrastructure</argument>
+									<argument>${project.build.sourceDirectory}</argument>
+									<argument>${project.basedir}/proto/service-desc.json</argument>
+								</arguments>
+								<systemProperties>
+									<systemProperty>
+										<key>PROTOC_PATH</key>
+										<value>${protoc.compiler.path}</value>
+									</systemProperty>
+								</systemProperties>
+							</configuration>
+
+							<goals>
+								<goal>java</goal>
+							</goals>
+						</execution>
+
+					</executions>
+				</plugin>
+
+
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+					<configuration>
+						<filesets>
+							<fileset>
+								<directory>src/main/java/org/xsrpcj/example/performance</directory> <!-- generated java file(s) -->
+								<includes>
+									<include>**/*</include>
+								</includes>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+							<fileset>
+								<directory>src/main/proto</directory> <!-- generated .proto file(s) -->
+								<includes>
+									<include>**/*</include>
+								</includes>
+								<followSymlinks>false</followSymlinks>
+							</fileset>							
+						</filesets>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		
+	</build>
+</project>

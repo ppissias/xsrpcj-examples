@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Example;
+
+option java_package = "org.xsrpcj.example.simple.types";
+option java_outer_classname = "Example";
+
+message MessageContainer {
+
+ enum MessageType {
+	searchRequest = 0;
+	searchResponse = 1;
+	notifyRequest = 2;
+	notifyResponse = 3;
+	notifyCallback = 4;
+  }
+  
+  MessageType messageType = 1;
+  
+  bytes messageData = 2;
+}
+
+

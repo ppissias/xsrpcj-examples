@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package SearchMessages;
+
+option java_package = "org.xsrpcj.example.simple";
+option java_outer_classname = "SearchMessages";
+option java_generic_services = true;
+
+//search message request
+message SearchPersonRequest {
+  string name = 1;
+}
+
+//search message response
+message SearchPersonResponse {
+  
+  message Person {
+  	string firstName = 1; 
+  	string lastName = 2; 
+  	string telephone = 3;
+  }
+  
+  Person response = 1; 
+}
+
+//notification message request
+message PersonNotificationRequest {
+  string name = 1;
+}
+
+//notification message response
+message PersonNotificationResponse {
+  
+ enum responseEnum {
+    ACCEPTED = 0;
+    REJECTED = 1;
+  }
+  
+  responseEnum response = 1;   
+}
+
+

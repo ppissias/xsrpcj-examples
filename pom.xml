@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.xsrpcj.example</groupId>
+	<artifactId>examples</artifactId>
+
+	<version>1.0.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<protoc.compiler.path>C:\dev\javalibs\protoc-3.5.1-win32\bin\protoc.exe</protoc.compiler.path>
+		<protoc.grpc.path>C:\dev\javalibs\protoc-3.5.1-win32\bin\protoc-gen-grpc-java-1.13.1-windows-x86_64.exe</protoc.grpc.path>
+	</properties>
+
+	<modules>
+		<module>Grpc-performance</module>
+		<module>xsrpcj-performance</module>
+		<module>xsrpcj-simple</module>
+	</modules>
+
+</project>
