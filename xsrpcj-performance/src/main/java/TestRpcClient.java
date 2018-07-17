@@ -107,7 +107,7 @@ public class TestRpcClient {
 			e.printStackTrace();
 		}
 		
-		if (args.length != 3) {
+		if (args.length != 4) {
 			System.out.println("Expected Arguments: <request data> <repetitions> <rounds> <server host>");
 			System.out.println("<request data> : data to send as part of the request");
 			System.out.println("<repetitions> : number of calls per rpc method. For a method with a callback it is the number of callbacks");

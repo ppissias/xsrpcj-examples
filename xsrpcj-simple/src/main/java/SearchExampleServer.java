@@ -21,9 +21,9 @@ import org.xsrpcj.example.simple.server.PersonsServerService;
  * @author Petros Pissias
  *
  */
-public class SearchExamplesServer {
+public class SearchExampleServer {
 
-	private final Logger logger = Logger.getLogger(SearchExamplesServer.class);
+	private final Logger logger = Logger.getLogger(SearchExampleServer.class);
 	
 	private final Random random = new Random();
 	
@@ -100,7 +100,7 @@ public class SearchExamplesServer {
 		}		
 		
 		//start the server
-		new SearchExamplesServer().startServer();
+		new SearchExampleServer().startServer();
 	}
 
 	//defines the service implementation and starts the server

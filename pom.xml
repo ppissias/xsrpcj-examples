@@ -15,9 +15,9 @@
 	</properties>
 
 	<modules>
-		<module>Grpc-performance</module>
 		<module>xsrpcj-performance</module>
 		<module>xsrpcj-simple</module>
+		<module>Grpc-performance</module>		
 	</modules>
 
 </project>

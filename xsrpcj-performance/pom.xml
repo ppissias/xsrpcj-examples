@@ -88,13 +88,9 @@
 									<argument>${project.build.sourceDirectory}</argument>
 									<argument>${project.basedir}/proto/service-desc.json</argument>
 								</arguments>
-								<systemProperties>
-									<systemProperty>
-										<key>PROTOC_PATH</key>
-										<value>${protoc.compiler.path}</value>
-									</systemProperty>
-								</systemProperties>
+
 							</configuration>
+
 
 							<goals>
 								<goal>java</goal>
