@@ -39,11 +39,13 @@
 
 	</dependencies>
 
+	
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		
 			<plugins>
 
+				<!--  compile .proto file & generate grpc java rpc code -->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
@@ -55,11 +57,11 @@
 							<configuration>
 								<executable failonerror="true">${protoc.compiler.path}</executable>
 								<arguments>
-									<argument>-I=${project.basedir}/proto</argument>
+									<argument>-I=${project.build.sourceProtoDirectory}</argument>
 									<argument>--java_out=${project.build.sourceDirectory}</argument>
 									<argument>--plugin=protoc-gen-grpc-java=${protoc.grpc.path}</argument>
 									<argument>--grpc-java_out=${project.build.sourceDirectory}</argument>
-									<argument>${project.basedir}/proto/TestMessages.proto</argument>
+									<argument>${project.build.sourceProtoDirectory}/TestMessages.proto</argument>
 								</arguments>
 							</configuration>
 

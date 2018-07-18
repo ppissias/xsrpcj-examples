@@ -33,7 +33,7 @@
 
 	</dependencies>
 
-
+	
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		
@@ -54,7 +54,7 @@
 					<version>1.6.0</version>
 					<executions>
 
-
+						<!--  compile .proto file -->
 						<execution>
 							<id>exec-protoc</id>
 							
@@ -67,15 +67,15 @@
 							<configuration>
 								<executable failonerror="true">${protoc.compiler.path}</executable>
 								<arguments>
-									<argument>-I=${project.basedir}/proto</argument>
+									<argument>-I=${project.build.sourceProtoDirectory}</argument>
 									<argument>--java_out=${project.build.sourceDirectory}</argument>
-									<argument>${project.basedir}/proto/TestMessages.proto</argument>
+									<argument>${project.build.sourceProtoDirectory}/TestMessages.proto</argument>
 								</arguments>
 							</configuration>
 
 						</execution>
 
-
+						<!--  generate RPC java code and compile generated .proto file -->
 						<execution>
 							<id>generate RPC stubs</id>
 							<phase>generate-sources</phase>
@@ -86,7 +86,7 @@
 									<argument>-client</argument>
 									<argument>-infrastructure</argument>
 									<argument>${project.build.sourceDirectory}</argument>
-									<argument>${project.basedir}/proto/service-desc.json</argument>
+									<argument>${project.build.sourceProtoDirectory}/service-desc.json</argument>
 								</arguments>
 
 							</configuration>
@@ -112,14 +112,7 @@
 									<include>**/*</include>
 								</includes>
 								<followSymlinks>false</followSymlinks>
-							</fileset>
-							<fileset>
-								<directory>src/main/proto</directory> <!-- generated .proto file(s) -->
-								<includes>
-									<include>**/*</include>
-								</includes>
-								<followSymlinks>false</followSymlinks>
-							</fileset>							
+							</fileset>${project.build.sourceProtoDirectory}/						
 						</filesets>
 					</configuration>
 				</plugin>
