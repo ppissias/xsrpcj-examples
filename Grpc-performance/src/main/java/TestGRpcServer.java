@@ -33,7 +33,7 @@ public class TestGRpcServer {
 		public void requestResponse(MessageRequest request,
 				StreamObserver<MessageResponse> responseObserver) {
 			
-			logger.info("received request for "+request.getRequestData());
+			logger.debug("received request for "+request.getRequestData());
 			MessageResponse response = TestMessages.MessageResponse.newBuilder().setResponse(responseEnum.ACCEPTED).build();
 			
 			responseObserver.onNext(response);

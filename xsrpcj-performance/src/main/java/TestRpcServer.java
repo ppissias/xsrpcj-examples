@@ -72,12 +72,12 @@ public class TestRpcServer {
 		ExampleServerService serviceImplementation = new ExampleServerService() {
 			@Override
 			public void oneWayRequest(MessageRequest request) {
-				logger.info("received one way request. Data: "+request.getRequestData());		
+				logger.debug("received one way request. Data: "+request.getRequestData());		
 			}
 			
 			@Override
 			public MessageResponse requestResponse(MessageRequest request) {
-				logger.info("received request for "+request.getRequestData());
+				logger.debug("received request for "+request.getRequestData());
 				return TestMessages.MessageResponse.newBuilder().setResponse(responseEnum.ACCEPTED).build();
 			}
 			
