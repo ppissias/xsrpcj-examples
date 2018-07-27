@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Persons;
 
-option java_package = "org.xsrpcj.example.simple.types";
+option java_package = "io.github.ppissias.xsrpcj.example.simple.types";
 option java_outer_classname = "Persons";
 
 message MessageContainer {

@@ -5,16 +5,16 @@
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.xsrpcj.example.performance.TestMessages;
-import org.xsrpcj.example.performance.TestMessages.CallbackResponse;
-import org.xsrpcj.example.performance.TestMessages.CallbackResponse.Builder;
-import org.xsrpcj.example.performance.TestMessages.MessageRequest;
-import org.xsrpcj.example.performance.TestMessages.MessageResponse;
-import org.xsrpcj.example.performance.TestMessages.MessageResponse.responseEnum;
-import org.xsrpcj.example.performance.comms.RemoteCommunicationsException;
-import org.xsrpcj.example.performance.server.ExampleRequestResponseCallbackServerCallback;
-import org.xsrpcj.example.performance.server.ExampleServer;
-import org.xsrpcj.example.performance.server.ExampleServerService;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.CallbackResponse;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.CallbackResponse.Builder;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.MessageRequest;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.MessageResponse;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.MessageResponse.responseEnum;
+import io.github.ppissias.xsrpcj.example.performance.comms.RemoteCommunicationsException;
+import io.github.ppissias.xsrpcj.example.performance.server.ExampleRequestResponseCallbackServerCallback;
+import io.github.ppissias.xsrpcj.example.performance.server.ExampleServer;
+import io.github.ppissias.xsrpcj.example.performance.server.ExampleServerService;
 
 /**
  * @author Petros Pissias

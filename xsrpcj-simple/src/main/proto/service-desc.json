@@ -3,16 +3,16 @@
 	 	{
 			"name": "Persons",
 			"port": "22100",
-			"javaPackage":"org.xsrpcj.example.simple",
+			"javaPackage":"io.github.ppissias.xsrpcj.example.simple",
 			"services":[
-				{"serviceName":"search", "requestType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonRequest", "responseType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" },
-				{"serviceName":"notify", "requestType":"org.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest", "responseType":"org.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse" , "callbackType":"org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" }
+				{"serviceName":"search", "requestType":"io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonRequest", "responseType":"io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" },
+				{"serviceName":"notify", "requestType":"io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest", "responseType":"io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse" , "callbackType":"io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse" }
 			]
 		}
 				
 	], 
 	"infrastructure" : {
-		"javaPackage":"org.xsrpcj.example.simple.comms",
+		"javaPackage":"io.github.ppissias.xsrpcj.example.simple.comms",
 		"logging":"System"
 	}	 
 }

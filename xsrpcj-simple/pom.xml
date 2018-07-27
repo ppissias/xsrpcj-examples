@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<parent>
-    	<groupId>org.xsrpcj.example</groupId>
-    	<artifactId>examples</artifactId>
+    	<groupId>io.github.ppissias</groupId>
+    	<artifactId>xsrpcj-examples</artifactId>
     	<version>1.0.0-SNAPSHOT</version>
  	</parent>
  	
@@ -15,8 +15,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.xsrpcj</groupId>
-			<artifactId>xsrpcj-generator</artifactId>
+			<groupId>io.github.ppissias</groupId>
+			<artifactId>xsrpcj</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
@@ -83,7 +83,7 @@
 							<id>generate RPC stubs</id>
 							<phase>generate-sources</phase>
 							<configuration>
-								<mainClass>org.xsrpcj.gen.XsRPCJGenerator</mainClass>
+								<mainClass>io.github.ppissias.xsrpcj.XsRPCJGenerator</mainClass>
 								<arguments>
 									<argument>-server</argument>
 									<argument>-client</argument>
@@ -109,7 +109,7 @@
 					<configuration>
 						<filesets>
 							<fileset>
-								<directory>src/main/java/org/xsrpcj/example/simple</directory> <!-- generated java file(s) -->
+								<directory>src/main/java/io/github/ppissias/xsrpcj/example/simple</directory> <!-- generated java file(s) -->
 								<includes>
 									<include>**/*</include>
 								</includes>

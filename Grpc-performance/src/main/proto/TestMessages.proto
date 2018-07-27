@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package TestMessages;
 
-option java_package = "org.xsrpcj.example.grpcperformance";
+option java_package = "io.github.ppissias.xsrpcj.example.grpcperformance";
 option java_outer_classname = "TestMessages";
 option java_generic_services = true;
 

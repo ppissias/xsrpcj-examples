@@ -7,15 +7,15 @@ import java.util.Random;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest;
-import org.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse;
-import org.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse.responseEnum;
-import org.xsrpcj.example.simple.SearchMessages.SearchPersonRequest;
-import org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse;
-import org.xsrpcj.example.simple.comms.RemoteCommunicationsException;
-import org.xsrpcj.example.simple.server.PersonsNotifyServerCallback;
-import org.xsrpcj.example.simple.server.PersonsServer;
-import org.xsrpcj.example.simple.server.PersonsServerService;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationResponse.responseEnum;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonRequest;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse;
+import io.github.ppissias.xsrpcj.example.simple.comms.RemoteCommunicationsException;
+import io.github.ppissias.xsrpcj.example.simple.server.PersonsNotifyServerCallback;
+import io.github.ppissias.xsrpcj.example.simple.server.PersonsServer;
+import io.github.ppissias.xsrpcj.example.simple.server.PersonsServerService;
 
 /**
  * @author Petros Pissias
@@ -50,9 +50,9 @@ public class SearchExampleServer {
 				} catch (InterruptedException e1) {
 				}
 				
-				org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Builder cbResponseBuilder = SearchPersonResponse.newBuilder();
+				io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Builder cbResponseBuilder = SearchPersonResponse.newBuilder();
 				
-				org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder 
+				io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder 
 					personBuilder = SearchPersonResponse.Person.newBuilder();
 				
 				buildRandomPerson(name, personBuilder);
@@ -68,7 +68,7 @@ public class SearchExampleServer {
 		}
 		
 		//builds random person
-		private void buildRandomPerson(String fname, org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder personBuilder) {
+		private void buildRandomPerson(String fname, io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder personBuilder) {
 			String[] lastNames = {"Smith","Jones","Parsons","Jackson","Anderson","Stamatiou","Lalakis","Tailor","Pirina","Glassy"};
 			
 			personBuilder.setFirstName(fname);
@@ -116,9 +116,9 @@ public class SearchExampleServer {
 			@Override
 			public SearchPersonResponse search(SearchPersonRequest request) {
 				
-				org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Builder responseBuilder = SearchPersonResponse.newBuilder();
+				io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Builder responseBuilder = SearchPersonResponse.newBuilder();
 				
-				org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder 
+				io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder 
 					personBuilder = SearchPersonResponse.Person.newBuilder();
 				
 				buildRandomPerson(request.getName(), personBuilder);
@@ -150,7 +150,7 @@ public class SearchExampleServer {
 	
 
 	//builds random person, based on a first name
-	private void buildRandomPerson(String fname, org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder personBuilder) {
+	private void buildRandomPerson(String fname, io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse.Person.Builder personBuilder) {
 		String[] lastNames = {"Smith","Jones","Parsons","Jackson","Anderson","Stamatiou","Lalakis","Tailor","Pirina","Glassy"};
 		
 		personBuilder.setFirstName(fname);

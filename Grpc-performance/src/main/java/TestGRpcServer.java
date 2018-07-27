@@ -9,14 +9,14 @@ import io.grpc.stub.StreamObserver;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.xsrpcj.example.grpcperformance.ExampleGrpc;
-import org.xsrpcj.example.grpcperformance.TestMessages;
-import org.xsrpcj.example.grpcperformance.ExampleGrpc.ExampleImplBase;
-import org.xsrpcj.example.grpcperformance.TestMessages.CallbackResponse;
-import org.xsrpcj.example.grpcperformance.TestMessages.CallbackResponse.Builder;
-import org.xsrpcj.example.grpcperformance.TestMessages.MessageRequest;
-import org.xsrpcj.example.grpcperformance.TestMessages.MessageResponse;
-import org.xsrpcj.example.grpcperformance.TestMessages.MessageResponse.responseEnum;
+import io.github.ppissias.xsrpcj.example.grpcperformance.ExampleGrpc;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages;
+import io.github.ppissias.xsrpcj.example.grpcperformance.ExampleGrpc.ExampleImplBase;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages.CallbackResponse;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages.CallbackResponse.Builder;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages.MessageRequest;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages.MessageResponse;
+import io.github.ppissias.xsrpcj.example.grpcperformance.TestMessages.MessageResponse.responseEnum;
 
 
 /**

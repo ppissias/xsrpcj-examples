@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Example;
 
-option java_package = "org.xsrpcj.example.performance.types";
+option java_package = "io.github.ppissias.xsrpcj.example.performance.types";
 option java_outer_classname = "Example";
 
 message MessageContainer {

@@ -4,13 +4,15 @@ This repository contains examples using xsrpcj and some performance measurements
 
 ## Running the examples 
 You need to get the repository and compile the top level project, which will in turn compile all the sub project examples. 
+
 ### Compiling xsrpcj 
-If you haven't done so already, you need to also have the xsrpcj jars in your local maven repository, in order to be able to use them as dependencies for the examples:
+If you would like to compile xsrpcj yourself, you can download the repository and execute:
 
     cd xsrpcj
     mvn clean install 
 
-This should compile and install the required jars to your local maven repository for using the xsrpcj code generator for the examples. 
+This should compile and install the required jars to your local maven repository for using the xsrpcj code generator for the examples.
+ 
 ### Compiling and running the examples
 You need to have an environment variable 
 `PROTOC_PATH` pointing to the protoc executable `PROTOC_PATH=/path/to/protoc` (please contribute to the project if there is a good way to setup this environment variable globally from the top level maven pom) 

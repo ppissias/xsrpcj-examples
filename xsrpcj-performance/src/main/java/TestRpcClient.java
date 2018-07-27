@@ -8,13 +8,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.xsrpcj.example.performance.TestMessages;
-import org.xsrpcj.example.performance.TestMessages.CallbackResponse;
-import org.xsrpcj.example.performance.TestMessages.MessageResponse;
-import org.xsrpcj.example.performance.client.ExampleClientService;
-import org.xsrpcj.example.performance.client.ExampleClientServiceImpl;
-import org.xsrpcj.example.performance.client.ExampleRequestResponseCallbackClientCallback;
-import org.xsrpcj.example.performance.comms.RemoteCommunicationsException;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.CallbackResponse;
+import io.github.ppissias.xsrpcj.example.performance.TestMessages.MessageResponse;
+import io.github.ppissias.xsrpcj.example.performance.client.ExampleClientService;
+import io.github.ppissias.xsrpcj.example.performance.client.ExampleClientServiceImpl;
+import io.github.ppissias.xsrpcj.example.performance.client.ExampleRequestResponseCallbackClientCallback;
+import io.github.ppissias.xsrpcj.example.performance.comms.RemoteCommunicationsException;
 
 /**
  * @author Petros Pissias

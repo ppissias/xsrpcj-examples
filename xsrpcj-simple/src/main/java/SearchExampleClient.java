@@ -7,13 +7,13 @@ import java.util.Random;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest;
-import org.xsrpcj.example.simple.SearchMessages.SearchPersonRequest;
-import org.xsrpcj.example.simple.SearchMessages.SearchPersonResponse;
-import org.xsrpcj.example.simple.client.PersonsClientService;
-import org.xsrpcj.example.simple.client.PersonsClientServiceImpl;
-import org.xsrpcj.example.simple.client.PersonsNotifyClientCallback;
-import org.xsrpcj.example.simple.comms.RemoteCommunicationsException;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.PersonNotificationRequest;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonRequest;
+import io.github.ppissias.xsrpcj.example.simple.SearchMessages.SearchPersonResponse;
+import io.github.ppissias.xsrpcj.example.simple.client.PersonsClientService;
+import io.github.ppissias.xsrpcj.example.simple.client.PersonsClientServiceImpl;
+import io.github.ppissias.xsrpcj.example.simple.client.PersonsNotifyClientCallback;
+import io.github.ppissias.xsrpcj.example.simple.comms.RemoteCommunicationsException;
 
 /**
  * @author Petros Pissias
