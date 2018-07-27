@@ -12,16 +12,14 @@ If you haven't done so already, you need to also have the xsrpcj jars in your lo
 
 This should compile and install the required jars to your local maven repository for using the xsrpcj code generator for the examples. 
 ### Compiling and running the examples
-go to the top level project (called `xsrpcj-examples`) 
-edit `pom.xml` and put the path to the protoc compiler executable (and optionally the grpc java compiler to run the grpc performance example)
-
-    	<properties>
-			<protoc.compiler.path>/path/to/protoc</protoc.compiler.path>
-			<protoc.grpc.path>/path/to/protoc-gen-grpc-java</protoc.grpc.path>
-		</properties>
-Also you need to have an environment variable 
+You need to have an environment variable 
 `PROTOC_PATH` pointing to the protoc executable `PROTOC_PATH=/path/to/protoc` (please contribute to the project if there is a good way to setup this environment variable globally from the top level maven pom) 
+You can download the compiled protoc compiler usually here: (http://central.maven.org/maven2/com/google/protobuf/protoc/3.5.1/)
 
+for the grpc example, you also need to have an environment variable
+`PROTOC_GRPC_PATH` pointing to the grpc java generator executable `PROTOC_GRPC_PATH=/path/to/protoc-gen-grpc-java` 
+You can download the compiled grpc java generator usually here: (http://central.maven.org/maven2/io/grpc/protoc-gen-grpc-java/0.13.2/)
+ 
 Then you are all set ! 
 
     cd xsrpcj-examples

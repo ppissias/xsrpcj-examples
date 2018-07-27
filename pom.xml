@@ -10,12 +10,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-	<!-- 
-		<protoc.compiler.path>C:\dev\javalibs\protoc-3.5.1-win32\bin\protoc.exe</protoc.compiler.path>
-		<protoc.grpc.path>C:\dev\javalibs\protoc-3.5.1-win32\bin\protoc-gen-grpc-java-1.13.1-windows-x86_64.exe</protoc.grpc.path>
-	-->
 		<protoc.compiler.path>${env.PROTOC_PATH}</protoc.compiler.path>
-		<protoc.grpc.path>${env.PROTOC_GRPC_PATH}</protoc.grpc.path>			
 		<project.build.sourceProtoDirectory>${project.basedir}/src/main/proto</project.build.sourceProtoDirectory>	
 	</properties>
 
@@ -38,12 +33,6 @@
 									<message>You must specify the full path to the proto compiler executable in the PROTOC_PATH environment variable</message>
 									<regex>.{1,}$</regex>
 									<regexMessage>The environment variable PROTOC_PATH is not set</regexMessage>
-								</requireProperty>
-								<requireProperty>
-									<property>protoc.grpc.path</property>
-									<message>You must specify the full path to the java grpc proto compiler executable in the PROTOC_GRPC_PATH environment variable</message>
-									<regex>.{1,}$</regex>
-									<regexMessage>The environment variable PROTOC_GRPC_PATH is not set</regexMessage>
 								</requireProperty>
 							</rules>
 							<fail>true</fail>

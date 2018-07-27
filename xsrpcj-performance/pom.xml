@@ -14,9 +14,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.xsrpc.gen</groupId>
-			<artifactId>xsrpcgen</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.xsrpcj</groupId>
+			<artifactId>xsrpcj-generator</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>

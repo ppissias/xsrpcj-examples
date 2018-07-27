@@ -11,6 +11,11 @@
 	
 	<artifactId>grpc-performance</artifactId>
 	
+	<properties>
+		<protoc.grpc.path>${env.PROTOC_GRPC_PATH}</protoc.grpc.path>			
+	</properties>
+	
+		
 	<dependencies>
 	
 		<dependency>
@@ -45,6 +50,31 @@
 		
 			<plugins>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M2</version>
+				<executions>
+					<execution>
+						<id>enforce-property</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireProperty>
+									<property>protoc.grpc.path</property>
+									<message>You must specify the full path to the java grpc proto compiler executable in the PROTOC_GRPC_PATH environment variable</message>
+									<regex>.{1,}$</regex>
+									<regexMessage>The environment variable PROTOC_GRPC_PATH is not set</regexMessage>
+								</requireProperty>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
 				<!--  compile .proto file & generate grpc java rpc code -->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
